@@ -1,28 +1,64 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import dessertsDataFromJson from "./dessertsdata.json";
 
 import "./Desserts.css";
 
 const Desserts = () => {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
+  // const [itemchanged, setItemChanged] = useState(false)
   const [dessertsData, setDessertsData] = useState(dessertsDataFromJson);
 
-  useEffect(() => {
-    const dessertsSorted = dessertsDataFromJson.desserts.sort((a, b) => {
+  // useEffect(() => {
+  //   console.log("desserts before sorting", dessertsData)
+  //   const copyDesserts = [...dessertsData]
+  //   const dessertsSorted = copyDesserts.sort((a, b) => {
+  //     if (a.rate < b.rate) return 1;
+  //     if (a.rate > b.rate) return -1;
+  //     return 0;
+  //   });
+  //   console.log("deserts after sorting", dessertsSorted)
+  //   setDessertsData(dessertsSorted);
+  //   // getDesserts();
+  //   // console.log(dessertsSorted);
+  //   console.log("updated!")
+  // }, []);
+  const sortAndUpdateDesserts = (desserts) => {
+    const dessertsSorted = desserts.sort((a, b) => {
       if (a.rate < b.rate) return 1;
       if (a.rate > b.rate) return -1;
       return 0;
     });
-    setDessertsData(dessertsSorted);
-    getDesserts();
-    console.log(dessertsSorted);
-  }, [count]);
+    setDessertsData(dessertsSorted)
+  }
+
+  const addRateHandler = event => {
+    // Copiar objecte desertsData
+    const desserts = [...dessertsData]
+    console.log("desserts", desserts)
+    // Identificar quin desert he clicat i canviar-ho a dins de l'objecte COPIAT de desertsData
+    const selectedDessert = event.target.value
+    const updatedDesserts = desserts.map(dessert => {
+      if(dessert.id === selectedDessert) {
+        dessert.rate += 1
+      }
+      return dessert
+    })
+    sortAndUpdateDesserts(updatedDesserts)
+  };
+
+  const subtractRateHandler = event => {
+    const dessertId = event.target.value;
+    const dessertSelected = dessertsData.filter(selected => {
+      return selected.id === dessertId;
+    });
+    dessertSelected[0].rate -= 1;
+  };
 
   const getDesserts = () => {
     console.log(dessertsData);
     return (
       <ul>
-        {dessertsDataFromJson.desserts.map(dessert => (
+        {dessertsData.map(dessert => (
           <li className="dessert" key={dessert.id}>
             <img
               className="dessert-image"
@@ -39,7 +75,7 @@ const Desserts = () => {
               <div className="dessert-information__votes">
                 <button onClick={addRateHandler} value={dessert.id}>
                   {" "}
-                  <i class="far fa-thumbs-up"></i>
+                  <i className="far fa-thumbs-up"></i>
                   Add vote!
                 </button>
                 <button
@@ -47,7 +83,7 @@ const Desserts = () => {
                   onClick={subtractRateHandler}
                   value={dessert.id}
                 >
-                  <i class="far fa-thumbs-down"></i>
+                  <i className="far fa-thumbs-down"></i>
                   Remove vote!
                 </button>
               </div>
@@ -57,26 +93,7 @@ const Desserts = () => {
       </ul>
     );
   };
-  const addRateHandler = event => {
-    const dessertId = event.target.value;
-    const dessertSelected = dessertsData.filter(selected => {
-      return selected.id === dessertId;
-    });
-    console.log("dessertSelected", dessertSelected);
-    dessertSelected[0].rate += 1;
-    setCount(count + 1);
-  };
-
-  const subtractRateHandler = event => {
-    const dessertId = event.target.value;
-    const dessertSelected = dessertsData.filter(selected => {
-      return selected.id === dessertId;
-    });
-    dessertSelected[0].rate -= 1;
-    setCount(count - 1);
-    console.log("dessertSelected", dessertSelected);
-  };
-
+  
   return <div>{getDesserts()}</div>;
 };
 

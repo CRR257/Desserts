@@ -1,64 +1,62 @@
-{
-  "desserts": [
-    {
-      "id": "1",
-      "title": "Apple and butterscotch pie",
-      "image": "https://img.taste.com.au/k7YxX9NH/w720-h480-cfill-q80/taste/2016/11/apple-and-butterscotch-pie-90846-1.jpeg",
-      "rate": 0
-    },
-    {
-      "id": "2",
-      "title": "Apple cinnamon custard cake",
-      "image": "https://img.taste.com.au/Z9_7qFPQ/w720-h480-cfill-q80/taste/2016/11/apple-cinnamon-custard-cake-89932-1.jpeg",
-      "rate": 0
-    },
-    {
-      "id": "3",
-      "title": "Honey cheesecake",
-      "image": "https://img.taste.com.au/xGCVO4uP/w720-h480-cfill-q80/taste/2016/11/10-minute-honey-cheesecake-72402-1.jpeg",
-      "rate": 0
-    },
-    {
-      "id": "4",
-      "title": "After-dinner mints",
-      "image": "https://img.taste.com.au/4XLUtmWF/w720-h480-cfill-q80/taste/2016/11/after-dinner-mints-78245-1.jpeg",
-      "rate": 0
-    },
-    {
-      "id": "5",
-      "title": "Chocolate baubles",
-      "image": "https://img.taste.com.au/7jKUyf1r/w720-h480-cfill-q80/taste/2016/11/chocolate-baubles-5626-1.jpeg",
-      "rate": 0
-    },
-    {
-      "id": "6",
-      "title": "Banana split",
-      "image": "https://img.taste.com.au/d1GnSRiR/w720-h480-cfill-q80/taste/2016/11/banana-split-17976-1.jpeg",
-      "rate": 0
-    },
-    {
-      "id": "7",
-      "title": "Snickers rolls",
-      "image": "https://img.taste.com.au/ec8QDvgO/w720-h480-cfill-q80/taste/2016/11/snickers-rolls-26145-1.jpeg",
-      "rate": 0
-    },
-    {
-      "id": "8",
-      "title": "After-dinner choc-ices",
-      "image": "https://img.taste.com.au/J4-kakrU/w720-h480-cfill-q80/taste/2016/11/after-dinner-choc-ices-11079-1.jpeg",
-      "rate": 0
-    },
-    {
-      "id": "9",
-      "title": "Black forest trifles",
-      "image": "https://img.taste.com.au/rFu-veMM/w720-h480-cfill-q80/taste/2016/11/black-forest-trifles-30666-1.jpeg",
-      "rate": 0
-    },
-    {
-      "id": "10",
-      "title": "Apple crumble dessert cake",
-      "image": "https://img.taste.com.au/H-SqlL8h/w720-h480-cfill-q80/taste/2016/11/apple-crumble-dessert-cake-30198-1.jpeg",
-      "rate": 0
-    }
-  ]
-}
+[
+  {
+    "id": "1",
+    "title": "Apple and butterscotch pie",
+    "image": "https://img.taste.com.au/k7YxX9NH/w720-h480-cfill-q80/taste/2016/11/apple-and-butterscotch-pie-90846-1.jpeg",
+    "rate": 0
+  },
+  {
+    "id": "2",
+    "title": "Apple cinnamon custard cake",
+    "image": "https://img.taste.com.au/Z9_7qFPQ/w720-h480-cfill-q80/taste/2016/11/apple-cinnamon-custard-cake-89932-1.jpeg",
+    "rate": 0
+  },
+  {
+    "id": "3",
+    "title": "Honey cheesecake",
+    "image": "https://img.taste.com.au/xGCVO4uP/w720-h480-cfill-q80/taste/2016/11/10-minute-honey-cheesecake-72402-1.jpeg",
+    "rate": 0
+  },
+  {
+    "id": "4",
+    "title": "After-dinner mints",
+    "image": "https://img.taste.com.au/4XLUtmWF/w720-h480-cfill-q80/taste/2016/11/after-dinner-mints-78245-1.jpeg",
+    "rate": 0
+  },
+  {
+    "id": "5",
+    "title": "Chocolate baubles",
+    "image": "https://img.taste.com.au/7jKUyf1r/w720-h480-cfill-q80/taste/2016/11/chocolate-baubles-5626-1.jpeg",
+    "rate": 0
+  },
+  {
+    "id": "6",
+    "title": "Banana split",
+    "image": "https://img.taste.com.au/d1GnSRiR/w720-h480-cfill-q80/taste/2016/11/banana-split-17976-1.jpeg",
+    "rate": 0
+  },
+  {
+    "id": "7",
+    "title": "Snickers rolls",
+    "image": "https://img.taste.com.au/ec8QDvgO/w720-h480-cfill-q80/taste/2016/11/snickers-rolls-26145-1.jpeg",
+    "rate": 0
+  },
+  {
+    "id": "8",
+    "title": "After-dinner choc-ices",
+    "image": "https://img.taste.com.au/J4-kakrU/w720-h480-cfill-q80/taste/2016/11/after-dinner-choc-ices-11079-1.jpeg",
+    "rate": 0
+  },
+  {
+    "id": "9",
+    "title": "Black forest trifles",
+    "image": "https://img.taste.com.au/rFu-veMM/w720-h480-cfill-q80/taste/2016/11/black-forest-trifles-30666-1.jpeg",
+    "rate": 0
+  },
+  {
+    "id": "10",
+    "title": "Apple crumble dessert cake",
+    "image": "https://img.taste.com.au/H-SqlL8h/w720-h480-cfill-q80/taste/2016/11/apple-crumble-dessert-cake-30198-1.jpeg",
+    "rate": 0
+  }
+]
