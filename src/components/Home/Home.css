@@ -1,0 +1,10 @@
+.container {
+  margin: 2rem 11rem;
+}
+.container-title {
+  font-size: 26px;
+  font-weight: 800;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
