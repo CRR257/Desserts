@@ -1,0 +1,52 @@
+.dessert {
+  border: 1px solid black;
+  padding: 1rem;
+  list-style: none;
+  margin: 1rem;
+  border-radius: 2px;
+  display: flex;
+  background-color: #f2d17773;
+}
+
+.dessert-image {
+  width: 200px;
+  border: 1px solid black;
+  border-radius: 13px;
+  padding: 3px;
+}
+
+.dessert-information {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.dessert-information__title {
+  font-size: 21px;
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+.dessert-information__rate {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.dessert-information__votes {
+  margin-top: 15px;
+}
+
+button {
+  border: 1px solid #010101;
+  padding: 10px;
+  font-weight: 600;
+  margin: 10px 10px 0 0;
+  background-color: #acacacc2;
+  font-size: 20px;
+  border-radius: 2px;
+}
+
+i {
+  padding-right: 10px;
+  font-size: 22px;
+}
