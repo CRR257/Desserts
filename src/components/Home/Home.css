@@ -1,5 +1,7 @@
 .container {
-  margin: 2rem 11rem;
+  margin-top: 2rem;
+  justify-content: center;
+  width: 100%;
 }
 .container-title {
   font-size: 26px;
