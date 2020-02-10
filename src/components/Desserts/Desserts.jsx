@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import dessertsDataFromJson from "./dessertsdata.json";
+import dessertsDataFromJson from "../../data/dessertsData.json";
 
 import Dessert from "../Dessert/Dessert.jsx";
 
