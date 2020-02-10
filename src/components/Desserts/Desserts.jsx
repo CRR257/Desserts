@@ -21,6 +21,7 @@ const Desserts = () => {
   };
 
   const addRateHandler = event => {
+    alert("aaa")
     const desserts = [...dessertsData];
     const selectedDessert = event.target.value;
     const updatedDesserts = desserts.map(dessert => {
@@ -48,8 +49,8 @@ const Desserts = () => {
     return (
       <Dessert
         dessertsData={dessertsData}
-        onClickHandler={subtractRateHandler}
-        onClickedHandler={addRateHandler}
+        onAddClickedHandler={addRateHandler}
+        onRemoveClickedHandler={subtractRateHandler}
       ></Dessert>
     );
   };
