@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../UI/Button/Button";
 
 import "./Dessert.css";
 
@@ -18,18 +19,18 @@ const Dessert = props => {
               Rate: {dessert.rate}
             </span>
             <div className="dessert-information__votes">
-              <button onClick={props.onClickedHandler} value={dessert.id}>
+              <Button clicked={props.onAddClickedHandler} value={dessert.id}>
                 <i className="far fa-thumbs-up"></i>
                 Add vote!
-              </button>
-              <button
+              </Button>
+              <Button
                 disabled={dessert.rate <= 0}
-                onClick={props.onClickHandler}
+                clicked={props.onRemoveClickedHandler}
                 value={dessert.id}
               >
                 <i className="far fa-thumbs-down"></i>
                 Remove vote!
-              </button>
+              </Button>
             </div>
           </div>
         </li>
