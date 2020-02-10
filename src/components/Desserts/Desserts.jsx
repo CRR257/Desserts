@@ -21,7 +21,6 @@ const Desserts = () => {
   };
 
   const addRateHandler = event => {
-    alert("aaa")
     const desserts = [...dessertsData];
     const selectedDessert = event.target.value;
     const updatedDesserts = desserts.map(dessert => {
