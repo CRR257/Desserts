@@ -1,11 +1,3 @@
-.desserts-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: unset;
-  padding: unset;
-  justify-content: center;
-}
 .dessert {
   display: flex;
   flex-direction: column;
@@ -37,6 +29,7 @@
   font-size: 21px;
   font-weight: 600;
   margin: 1rem 0;
+  height: 42px;
 }
 
 .dessert-information__rate {
