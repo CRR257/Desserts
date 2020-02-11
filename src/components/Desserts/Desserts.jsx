@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 import dessertsDataFromJson from "../../data/dessertsData.json";
 
+import dessertsDataFromJson from "../../data/dessertsData.json";
 import Dessert from "../Dessert/Dessert.jsx";
 import Button from "../UI/Button/Button";
 import "./Desserts.css";
