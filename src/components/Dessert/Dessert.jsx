@@ -5,37 +5,35 @@ import "./Dessert.css";
 
 const Dessert = props => {
   return (
-    <ul className="desserts-container">
-      {props.dessertsData.map(dessert => (
-        <li className="dessert" key={dessert.id}>
-          <img
-            className="dessert-image"
-            src={dessert.image}
-            alt={dessert.title}
-          />
-          <div className="dessert-information">
-            <span className="dessert-information__title">{dessert.title}</span>
-            <span className="dessert-information__rate">
-              Rate: {dessert.rate}
-            </span>
-            <div className="dessert-information__votes">
-              <Button clicked={props.onAddClickedHandler} value={dessert.id}>
-                <i className="far fa-thumbs-up"></i>
-                Add vote!
-              </Button>
-              <Button
-                disabled={dessert.rate <= 0}
-                clicked={props.onRemoveClickedHandler}
-                value={dessert.id}
-              >
-                <i className="far fa-thumbs-down"></i>
-                Remove vote!
-              </Button>
-            </div>
-          </div>
-        </li>
-      ))}
-    </ul>
+    <li className="dessert" key={props.dessert.id}>
+      <img
+        className="dessert-image"
+        src={props.dessert.image}
+        alt={props.dessert.title}
+      />
+      <div className="dessert-information">
+        <span className="dessert-information__title">
+          {props.dessert.title}
+        </span>
+        <span className="dessert-information__rate">
+          Rate: {props.dessert.rate}
+        </span>
+        <div className="dessert-information__votes">
+          <Button clicked={props.onAddClickedHandler} value={props.dessert.id}>
+            <i className="far fa-thumbs-up"></i>
+            Add vote!
+          </Button>
+          <Button
+            disabled={props.dessert.rate <= 0}
+            clicked={props.onRemoveClickedHandler}
+            value={props.dessert.id}
+          >
+            <i className="far fa-thumbs-down"></i>
+            Remove vote!
+          </Button>
+        </div>
+      </div>
+    </li>
   );
 };
 

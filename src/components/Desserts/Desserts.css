@@ -1,0 +1,14 @@
+.desserts-randomclick {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.desserts-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: unset;
+  padding: unset;
+  justify-content: center;
+}
