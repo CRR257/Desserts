@@ -1,5 +1,4 @@
 import React, { Fragment, useState, useEffect } from "react";
-import dessertsDataFromJson from "../../data/dessertsData.json";
 
 import dessertsDataFromJson from "../../data/dessertsData.json";
 import Dessert from "../Dessert/Dessert.jsx";
@@ -9,6 +8,7 @@ import "./Desserts.css";
 const Desserts = () => {
   const [dessertsData, setDessertsData] = useState([]);
   const [autoRateDesserts, setAutoRateDesserts] = useState(false);
+  const [randomButtonText, setRandomButtonText] = useState("Random rating");
 
   useEffect(() => {
     sortAndUpdateDesserts(dessertsDataFromJson);
@@ -53,24 +53,26 @@ const Desserts = () => {
   };
 
   const randomClickHandler = () => {
-    const timer = setInterval(() => {
-      const randomItem = Math.floor(Math.random() * dessertsData.length);
-      addRateHandler(null, randomItem.toString());
-      clearInterval(timer);
-      randomClickHandler();
-    }, 1000 + Math.floor(Math.random() * 2000));
-    setAutoRateDesserts(timer);
-  };
-
-  const stopClickHandler = () => {
-    clearTimeout(autoRateDesserts);
+    if (!autoRateDesserts) {
+      const timer = setInterval(() => {
+        const randomItem = Math.floor(Math.random() * dessertsData.length);
+        addRateHandler(null, randomItem.toString());
+        clearInterval(timer);
+        randomClickHandler();
+      }, 1000 + Math.floor(Math.random() * 2000));
+      setAutoRateDesserts(timer);
+      setRandomButtonText("Stop Random");
+    } else {
+      clearTimeout(autoRateDesserts);
+      setAutoRateDesserts(false);
+      setRandomButtonText("Random rating");
+    }
   };
 
   return (
     <Fragment>
       <div className="desserts-randomclick">
-        <Button clicked={randomClickHandler}>Random clicked!</Button>
-        <Button clicked={stopClickHandler}>Stop Random!</Button>
+        <Button clicked={randomClickHandler}>{randomButtonText}</Button>
       </div>
       {!dessertsData ? (
         <p>Loading desserts</p>
@@ -80,10 +82,10 @@ const Desserts = () => {
             return (
               <Dessert
                 dessert={dessert}
+                key={dessert.id}
                 onAddClickedHandler={addRateHandler}
                 onRemoveClickedHandler={subtractRateHandler}
                 onRandomClickedHandler={randomClickHandler}
-                onRandomStopClickHandler={stopClickHandler}
               />
             );
           })}

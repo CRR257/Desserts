@@ -5,7 +5,7 @@ import "./Dessert.css";
 
 const Dessert = props => {
   return (
-    <li className="dessert" key={props.dessert.id}>
+    <li className="dessert">
       <img
         className="dessert-image"
         src={props.dessert.image}

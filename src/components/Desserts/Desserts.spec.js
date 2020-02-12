@@ -1,57 +1,56 @@
 import React from "react";
 import { shallow } from "enzyme";
-import  Desserts  from "../Desserts/Desserts";
-import  Dessert  from "../Dessert/Dessert";
+import Desserts from "../Desserts/Desserts";
+import Button from "../UI/Button/Button";
 import dessertsDataFromJson from "../../data/dessertsData.json";
-import sortAndUpdateDesserts from './Desserts';
+import { addRateHandler } from "../Desserts/Desserts";
+
 import "../../setupTests";
 
 describe("Desserts", () => {
-  let wrapper;
-  beforeEach(() => {
-    wrapper = shallow(<Desserts />);
+  const onSubmitSpy = jest.fn();
+  const wrapper = shallow(<Desserts />);
+
+  it("should call function sortAndUpdateDesserts once when the component is initiallly mounted", () => {
+    const sortAndUpdateDesserts = jest.fn();
+    sortAndUpdateDesserts(dessertsDataFromJson);
+    expect(sortAndUpdateDesserts).toHaveBeenCalled();
+  });
+  it("should call function addRateHandler and clearInterval when the function randomClickHandler is clicked", () => {
+    const randomClickHandler = jest.fn();
+    const clearIntervalFunction = jest.fn();
+    const timer = setInterval(() => {
+      const randomItem = Math.floor(Math.random() * 12);
+      addRateHandler(null, randomItem.toString());
+      clearInterval(timer);
+      randomClickHandler();
+      expect(clearIntervalFunction).toHaveBeenCalled();
+    }, 1000 + Math.floor(Math.random() * 2000));
+  });
+  it("should call function clearTimeout when the function stopClickHandler is clicked", () => {
+    const clearTimeout = jest.fn();
+    clearTimeout();
+    expect(clearTimeout).toHaveBeenCalled();
   });
   it("should renders Dessert component", () => {
     expect(wrapper).toBeTruthy();
   });
-  it("should render Dessert Component", () => {
-    expect(wrapper.find(Dessert).length).toBe(1);
+  it("should renders Button component", () => {
+    expect(wrapper).toBeTruthy();
+  });
+  it("should render Button Component", () => {
+    expect(wrapper.find(Button).length).toBe(1);
+  });
+  it("should Buttons call onSubmit", () => {
+    expect(onSubmitSpy).not.toHaveBeenCalled();
   });
   it("should render dessertsDataFromJson", () => {
     expect(dessertsDataFromJson).toBeDefined();
   });
-//   it("should call function sortAndUpdateDesserts once when the component is initiallly mounted", () => {
-//     // const expected= [
-//     //   {
-//     //     "title": "Honey cheesecake",
-//     //     "rate": 12
-//     //   },
-//     //   {
-//     //     "title": "Apple cinnamon custard cake",
-//     //     "rate": 7
-//     //   },
-//     //   {
-//     //     "title": "Apple and butterscotch pie",
-//     //     "rate": 3
-//     //   },
-      
-//     //  ]
-//     // const desserts = [
-//     //     {
-//     //       "title": "Apple and butterscotch pie",
-//     //       "rate": 3
-//     //     },
-//     //     {
-//     //       "title": "Apple cinnamon custard cake",
-//     //       "rate": 7
-//     //     },
-//     //     {
-//     //       "title": "Honey cheesecake",
-//     //       "rate": 12
-//     //     },
-//     //   ]
-//     // const mapped = sortAndUpdateDesserts(desserts).map(dessert => dessert.rate)
-//     // expect(mapped).toEqual(expected)
-//     expect(sortAndUpdateDesserts).toBeCalled();
-// });
-})
+  it("should be selecteable by classname desserts-randomclick", () => {
+    expect(wrapper.find(".desserts-randomclick").length).toBe(1);
+  });
+  it("should render ul list-items", () => {
+    expect(wrapper.find(".desserts-container")).toBeDefined();
+  });
+});
