@@ -1,8 +1,14 @@
-button {
+.button {
   border: 1px solid #010101;
   padding: 5px;
   font-weight: 600;
   margin: 10px 10px 0 0;
   background-color: #acacacc2;
   border-radius: 2px;
+  cursor: pointer;
+}
+
+.randomizer {
+  background-color: #f09105a6;
+  padding: 12px;
 }

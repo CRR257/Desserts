@@ -4,9 +4,12 @@
   width: 100%;
 }
 .container-title {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 800;
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
+}
+.container-emoji {
+  margin: 0 10px;
 }

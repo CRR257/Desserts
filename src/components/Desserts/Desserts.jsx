@@ -72,7 +72,7 @@ const Desserts = () => {
   return (
     <Fragment>
       <div className="desserts-randomclick">
-        <Button clicked={randomClickHandler}>{randomButtonText}</Button>
+        <Button clicked={randomClickHandler} btnType="randomizer">{randomButtonText}</Button>
       </div>
       {!dessertsData ? (
         <p>Loading desserts</p>

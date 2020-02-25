@@ -13,8 +13,4 @@ describe("Desserts", () => {
   it("should render Desserts Component", () => {
     expect(wrapper.find(Desserts).length).toBe(1);
   });
-  it('renders the title', () => {
-    const text = wrapper.find('span').text();
-    expect(text).toEqual("Vote your favourite dessert")
-  });
 });

@@ -6,7 +6,15 @@ import "./Home.css";
 const Home = () => {
   return (
     <div className="container">
-      <span className="container-title">Vote your favourite dessert</span>
+      <span className="container-title">
+        <span role="img" aria-label="pie" className="container-emoji">
+          🥧 
+        </span>
+        Vote your favourite dessert
+        <span role="img" aria-label="pie" className="container-emoji">
+          🥧
+        </span>
+      </span>
       <Desserts />
     </div>
   );

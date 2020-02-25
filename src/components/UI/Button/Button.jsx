@@ -7,7 +7,8 @@ const Button = props => {
     <button
       disabled={props.disabled}
       onClick={props.clicked}
-      value={props.value} 
+      value={props.value}
+      className={["button",[props.btnType]].join(' ')}
     >
       {props.children}
     </button>

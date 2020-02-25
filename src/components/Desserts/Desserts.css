@@ -12,4 +12,6 @@
   padding: unset;
   justify-content: center;
 }
-
+.button-random {
+  padding: 3rem;
+}
